@@ -102,7 +102,7 @@ git clone https://github.com/NVIDIA-Omniverse/kit-app-template.git
 cd kit-app-template
 
 .\repo.bat setup
-.\repo.bat template new   # → "USD Composer" 선택
+.\repo.bat template new   # → "Application" → "USD Composer" 선택
 .\repo.bat build
 .\repo.bat launch         # 최초 실행: RTX 셰이더 컴파일 5~15분 소요
 ```
@@ -168,10 +168,15 @@ python --version  # Python 3.11.x 이어야 함
 ### cam_sim 패키지 설치
 
 ```powershell
-pip install -e ".[dev]"
+# 프로젝트 루트에서 venv 생성 (최초 1회)
+uv venv --python 3.12
+
+# cam_sim (시뮬레이션) 패키지 설치
+uv pip install -e packages/cam_sim
+uv pip install -e "packages/cam_sim[dev]"
 
 # 설치 확인
-python -c "import cam_sim; print('ok')"
+python -c "from cam_sim.lens import load_lens; print('ok')"
 ```
 
 ### Blender Python과 연결

@@ -5,3 +5,4 @@ __pycache__/
 dist/
 build/
 *.blend1
+.history/

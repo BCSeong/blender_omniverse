@@ -79,89 +79,120 @@
 
 ---
 
-## 4. 하위 프로젝트 구성
+## 4. 3-Layer 아키텍처
 
-| # | Sub-Project | 설명 | 우선순위 |
-|---|-------------|------|----------|
-| SP1 | Lens Import | Zemax(.zmx)/CodeV(.seq) 렌즈 데이터 파싱 및 카메라 모델 생성 | P0 |
-| SP2 | Camera/Sensor Model | 센서 특성(pixel pitch, resolution, QE 등) 모델링 | P0 |
-| SP3 | Object Import | 피사체 3D 모델 import 및 material 설정 | P1 |
-| SP4 | Lighting Setup | 조명 모델(종류, 위치, 스펙트럼) 구성 | P1 |
-| SP5 | Scene Composition | SP1~SP4 통합, USD scene 구성 자동화 | P1 |
-| SP6 | Image Acquisition | 다양한 조건 조합으로 이미지 batch 생성 | P2 |
-| SP7 | Dataset Management | 메타데이터 포함 DB 구축 및 관리 | P2 |
+### Layer 구성
+
+| Layer | 패키지 | 역할 | 인터페이스 |
+|-------|--------|------|-----------|
+| **Layer 1: Object Generation** | `blender_authoring` (specimen) | 검사 대상 시편 생성/import | Blender MCP + bpy |
+| **Layer 2: Machine Authoring** | `blender_authoring` (machine) | 검사기 구축 (카메라, 렌즈, 조명) | Blender MCP + bpy |
+| **Layer 3: Simulation** | `cam_sim` | 광학 모델, 센서 물리, 렌더링, 후처리 | Pure Python |
+
+### Layer 간 데이터 흐름
+
+```
+Layer 1 (시편 생성)          Layer 2 (검사기 구축)
+  Blender MCP / bpy            Blender MCP / bpy
+        │                            │
+        ▼                            ▼
+  .blend + manifest.yaml       .blend + manifest.yaml
+  assets/specimens/            assets/machines/
+        │                            │
+        └──────────┬─────────────────┘
+                   │
+                   ▼
+         Layer 3 (시뮬레이션)
+         ┌─────────────────────────────┐
+         │  assembly: manifest 로드     │
+         │  → USD export (headless)     │
+         │  → Omniverse RTX 렌더링     │
+         │  → 후처리 (PSF, noise)       │
+         │  → 최종 이미지 + 메타데이터   │
+         └─────────────────────────────┘
+```
+
+### Blender MCP 사용 정책 (Hybrid)
+- **자연어 MCP**: interactive 시편 생성, 프리뷰, 탐색적 작업 (Layer 1 위주)
+- **Python bpy 스크립트**: 재현 가능한 검사기 구성, batch 작업 (Layer 2 위주)
+- **cam_sim은 bpy 미사용**: Blender 필요 시 subprocess로 headless 호출만 허용
 
 ---
 
 ## 5. 모듈 아키텍처
 
-### 디렉토리 구조
+### 디렉토리 구조 (모노레포, 2 패키지)
 
 ```
 blender_omniverse/
-├── README.md
-├── pyproject.toml              # 패키지 설정
-├── src/
-│   └── cam_sim/                # 메인 패키지
-│       ├── __init__.py
-│       ├── pipeline.py         # 전체 파이프라인 오케스트레이터
-│       │
-│       ├── lens/               # SP1: 렌즈 데이터 모듈
-│       │   ├── __init__.py     # 공용 API (load_lens, LensModel)
-│       │   ├── pinhole.py      # Level 1: pinhole model
-│       │   ├── distortion.py   # Level 2: Brown-Conrady distortion
-│       │   └── zemax_parser.py # .zmx 파싱
-│       │
-│       ├── sensor/             # SP2: 센서 모듈
-│       │   ├── __init__.py     # 공용 API (SensorModel)
-│       │   ├── spec.py         # 센서 스펙 정의
-│       │   └── noise.py        # 노이즈 모델
-│       │
-│       ├── scene/              # SP3+SP4+SP5: 씬 구성
-│       │   ├── __init__.py     # 공용 API (build_scene)
-│       │   ├── objects.py      # 피사체 생성/import
-│       │   ├── lighting.py     # 조명 설정
-│       │   ├── camera.py       # 카메라 배치
-│       │   └── usd_export.py   # USD 내보내기
-│       │
-│       └── render/             # SP6: 렌더링 + 후처리
-│           ├── __init__.py     # 공용 API (render_scene)
-│           ├── omniverse.py    # Omniverse RTX 렌더링
-│           └── postprocess.py  # PSF convolution, 노이즈 적용
+├── pyproject.toml                    # workspace 선언
+├── .mcp.json                         # Blender MCP 설정
 │
-├── tests/                      # Unit tests (모듈별 분리)
-│   ├── test_lens/
-│   ├── test_sensor/
-│   ├── test_scene/
-│   └── test_render/
+├── packages/
+│   ├── blender_authoring/            # 패키지 1: Blender 의존 (Layer 1+2)
+│   │   ├── pyproject.toml
+│   │   ├── src/blender_authoring/
+│   │   │   ├── specimen/             # Layer 1: 시편 생성
+│   │   │   │   ├── primitives.py     #   기본 도형 생성
+│   │   │   │   ├── importer.py       #   CAD/STL/OBJ import
+│   │   │   │   └── materials.py      #   PBR material 헬퍼
+│   │   │   ├── machine/              # Layer 2: 검사기 구축
+│   │   │   │   ├── lens_asset.py     #   OptiCore .zmx import
+│   │   │   │   ├── camera_asset.py   #   카메라 배치
+│   │   │   │   ├── lighting_asset.py #   조명 리그
+│   │   │   │   └── grouping.py       #   공간 그룹 빌더
+│   │   │   └── export/               # 공용 export 유틸리티
+│   │   │       ├── blend_export.py
+│   │   │       └── usd_export.py
+│   │   ├── tests/
+│   │   ├── configs/
+│   │   └── scripts/                  # bpy batch 스크립트
+│   │
+│   └── cam_sim/                      # 패키지 2: Pure Python (Layer 3)
+│       ├── pyproject.toml
+│       ├── src/cam_sim/
+│       │   ├── pipeline.py           # 전체 파이프라인 오케스트레이터
+│       │   ├── lens/                 # 광학 모델
+│       │   │   ├── pinhole.py        #   Pinhole projection
+│       │   │   ├── distortion.py     #   Brown-Conrady distortion
+│       │   │   └── zemax_parser.py   #   .zmx 파싱
+│       │   ├── sensor/               # 센서 물리
+│       │   │   ├── spec.py           #   센서 스펙
+│       │   │   └── noise.py          #   노이즈 모델
+│       │   ├── assembly/             # Asset 로딩 + 조합
+│       │   │   ├── loader.py         #   manifest 읽기, USD export
+│       │   │   └── grouping.py       #   asset swap API
+│       │   └── render/               # 렌더링 + 후처리
+│       │       ├── omniverse.py      #   Omniverse RTX 렌더링
+│       │       └── postprocess.py    #   PSF convolution, 노이즈
+│       ├── tests/
+│       └── configs/
 │
-├── configs/                    # 설정 파일 (YAML)
-│   ├── lens_pinhole.yaml
-│   └── sensor_gmax0505.yaml
+├── assets/                           # Layer 간 교환 저장소
+│   ├── specimens/                    #   Layer 1 출력
+│   ├── machines/                     #   Layer 2 출력
+│   └── usd/                          #   USD export 결과
 │
-└── docs/                       # 모듈별 이력/설계 문서
-    ├── lens.md
-    ├── sensor.md
-    └── changelog.md
+├── docs/                             # 프로젝트 문서
+└── blender_model_example/            # 참고 모델
 ```
 
 ### 설계 원칙
 
-1. **모듈 독립성**: 각 모듈의 `__init__.py`가 공용 API 역할. 다른 모듈은 이것만 import
+1. **패키지 분리**: Blender 의존(`blender_authoring`)과 Pure Python(`cam_sim`)을 별도 패키지로 분리
    ```python
+   # cam_sim은 blender_authoring을 import하지 않음
    from cam_sim.lens import load_lens, LensModel
-   from cam_sim.scene import build_scene
+   from cam_sim.assembly import load_assembly
    from cam_sim.render import render_scene
    ```
 
-2. **Config 기반 실행**: 코드 수정 없이 YAML로 실험 조건 변경
-   ```python
-   pipeline.run("configs/experiment_01.yaml")
-   ```
+2. **Asset 기반 교환**: Layer 간 데이터 교환은 `.blend` + `.manifest.yaml` 파일
+   - 스키마 정의: `docs/manifest_schema.md`
 
-3. **독립 업데이트**: lens 모듈 업데이트 시 scene/render에 영향 없음 (인터페이스만 유지)
+3. **Config 기반 실행**: 코드 수정 없이 YAML로 실험 조건 변경
 
-4. **이력 관리**: 각 모듈의 `docs/*.md`에 변경 이력 기록
+4. **모듈 독립성**: 각 모듈의 `__init__.py`가 공용 API. 모듈 간 직접 import 금지
 
 5. **테스트 우선**: 모듈별 unit test 분리, pinhole부터 검증 후 점진 확장
 
@@ -170,17 +201,16 @@ blender_omniverse/
 ```
 pipeline.py (오케스트레이터)
     │
-    ├── lens.load_lens(config)        → LensModel
-    ├── sensor.load_sensor(config)    → SensorModel
-    ├── scene.build_scene(            → USD file path
-    │       lens_model,
-    │       sensor_model,
-    │       object_config,
-    │       lighting_config)
-    ├── render.render_scene(          → Raw image(s)
-    │       usd_path,
+    ├── lens.load_lens(config)                  → LensModel
+    ├── sensor.load_sensor(config)              → SensorModel
+    ├── assembly.load_assembly(                 → AssemblyConfig
+    │       machine_manifest,
+    │       specimen_manifest,
+    │       pose)
+    ├── render.render_scene(                    → Raw image(s)
+    │       assembly.usd_export_path,
     │       render_config)
-    └── render.postprocess(           → Final image(s) + metadata
+    └── render.postprocess(                     → Final image(s) + metadata
             raw_images,
             sensor_model,
             lens_model)

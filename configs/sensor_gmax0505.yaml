@@ -1,0 +1,11 @@
+# sensor_gmax0505.yaml: GMAX0505 센서 설정
+# TODO: datasheet 확인 후 실제 값 입력
+
+sensor:
+  model: GMAX0505
+  pixel_pitch_um: null        # TODO: datasheet 확인
+  resolution: [null, null]    # TODO: [width_px, height_px]
+  full_well_capacity_e: null  # TODO
+  read_noise_e: null          # TODO
+  dark_current_e_per_s: null  # TODO
+  qe_curve: {}                # TODO: {wavelength_nm: QE} 형식

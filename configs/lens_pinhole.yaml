@@ -1,0 +1,9 @@
+# lens_pinhole.yaml: Pinhole 렌즈 모델 설정 (Level 1)
+
+lens:
+  model: pinhole
+  focal_length_mm: 50.0
+  sensor_width_mm: 6.4        # GMAX0505 기준 (TBD - datasheet 확인 필요)
+  sensor_height_mm: 4.8       # GMAX0505 기준 (TBD - datasheet 확인 필요)
+  image_width_px: 2592         # TBD
+  image_height_px: 1944        # TBD

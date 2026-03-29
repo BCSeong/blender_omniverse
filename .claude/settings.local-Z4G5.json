@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__blender__execute_blender_code"
+    ]
+  }
+}

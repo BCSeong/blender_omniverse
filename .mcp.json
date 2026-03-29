@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "blender": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "C:\\Users\\Z4G5\\.local\\bin\\uvx.exe",
+        "--python",
+        "3.12",
+        "blender-mcp"
+      ],
+      "env": {
+        "DISABLE_TELEMETRY": "true"
+      }
+    }
+  }
+}

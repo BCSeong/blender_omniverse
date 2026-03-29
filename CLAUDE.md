@@ -1,43 +1,36 @@
-# Camera Image Modeling Pipeline - Orchestrator
+# Camera Image Modeling Pipeline — Root Orchestrator
 
-## Project Overview
-Omniverse 기반 카메라 이미지 모델링 파이프라인.
-Blender(scene authoring) -> USD -> Omniverse RTX(rendering) -> Python(후처리)
+## Role: Router Only
+이 CLAUDE.md는 **라우터** 역할만 한다. 직접 모듈 코드를 수정하지 않는다.
+사용자 의도를 파악하여 해당 패키지 orchestrator에게 Agent tool로 위임한다.
 
-## Architecture
+## Architecture: 3-Layer
 ```
-pipeline.py (orchestrator)
-  ├── lens.load_lens(config)        -> LensModel
-  ├── sensor.load_sensor(config)    -> SensorModel
-  ├── scene.build_scene(...)        -> USD file path
-  ├── render.render_scene(...)      -> Raw image(s)
-  └── render.postprocess(...)       -> Final image(s) + metadata
+Layer 1: Object Generation (시편 생성)     → packages/blender_authoring/specimen/
+Layer 2: Machine Authoring (검사기 구축)    → packages/blender_authoring/machine/
+Layer 3: Simulation (시뮬레이션 실행)       → packages/cam_sim/
 ```
 
-## Module Contracts (interfaces)
-각 모듈은 `__init__.py`의 공용 API만 외부에 노출한다. 모듈 간 직접 import 금지.
+## Routing Rules
 
-- **lens**: `load_lens(config) -> LensModel`, `LensModel.project(point_3d) -> point_2d`
-- **sensor**: `load_sensor(config) -> SensorModel`, `SensorModel.apply_noise(image) -> image`
-- **scene**: `build_scene(lens_model, sensor_model, object_config, lighting_config, output_usd_path) -> str`
-- **render**: `render_scene(usd_path, render_config) -> list[image]`, `postprocess(raw_images, sensor_model, lens_model) -> list[image]`
+| 사용자 의도 | 위임 대상 |
+|------------|----------|
+| 시편/피사체 생성, import, material | `packages/blender_authoring/` → specimen agent |
+| 검사기 구성 (카메라, 렌즈, 조명) | `packages/blender_authoring/` → machine agent |
+| Blender scene export (USD, .blend) | `packages/blender_authoring/` → export |
+| 렌즈 광학 모델 (distortion, PSF) | `packages/cam_sim/` → lens agent |
+| 센서 모델 (noise, QE) | `packages/cam_sim/` → sensor agent |
+| Asset 로딩, 조합, swap | `packages/cam_sim/` → assembly agent |
+| Omniverse 렌더링, 후처리 | `packages/cam_sim/` → render agent |
+| **Manifest 스키마 변경** | **Root가 직접 조율** (양쪽 패키지 영향) |
 
-## Approximation Levels (incremental)
-| Level | Method | Status |
-|-------|--------|--------|
-| L1 | Pinhole + Brown-Conrady distortion | In progress |
-| L2 | Field-dependent PSF map | Planned |
-| L3 | Vignetting + relative illumination | Planned |
-| L4 | Full ray-traced simulation | Planned |
-
-## Agent Delegation Rules
-- 모듈별 작업은 해당 모듈 디렉토리의 CLAUDE.md를 참고하여 Agent tool로 위임
-- Orchestrator는 모듈 간 인터페이스 일관성과 통합만 담당
-- 각 agent는 자기 모듈 scope 내에서만 파일 수정
-- 모듈 인터페이스 변경 시 반드시 이 파일의 Module Contracts 섹션 업데이트
+## Cross-Package Interface
+- 교환 형식: `.blend` + `.manifest.yaml` (assets/ 디렉토리)
+- `blender_authoring`이 생성 → `cam_sim.assembly`가 소비
+- 스키마 정의: `docs/manifest_schema.md`
 
 ## Conventions
-- Language: Python 3.12+
+- Language: Python 3.10+
 - Config: YAML 기반
-- Test: pytest, 모듈별 tests/ 하위 디렉토리
+- Test: pytest
 - 한국어 주석/문서 허용, 코드는 영문

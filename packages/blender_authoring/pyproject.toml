@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blender_authoring"
+version = "0.1.0"
+description = "Blender-based scene authoring for inspection machines (Layer 1+2: specimen + machine)"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml",
+]
+# bpy is provided by Blender runtime — not listed as a pip dependency
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

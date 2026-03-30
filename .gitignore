@@ -6,6 +6,8 @@ dist/
 build/
 *.blend1
 .history/
+# Local environment config
+blender.env
 # Specimen .blend files are reproducible via recipe scripts
 assets/specimens/**/*.blend
 assets/machines/**/*.blend

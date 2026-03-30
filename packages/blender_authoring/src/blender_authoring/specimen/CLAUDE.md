@@ -9,18 +9,40 @@
 
 ## Specimen 생성 Workflow
 
-### MCP Interactive 방식 (기본)
+### 진입점
+```cmd
+scripts\start_specimen.bat
 ```
-1. launch_blender.bat 실행 → 빈 scene (mm 단위)
-2. MCP 연결 → Claude와 대화하며 시편 생성
-3. 만족 → "저장해줘" 요청
-4. Claude가:
+대화형 메뉴:
+1. **New specimen** — 빈 scene (mm 단위)으로 Blender 실행
+2. **Open existing .blend** — 기존 파일을 열어 수정
+
+Blender 실행 후 Claude Code가 specimen context와 함께 자동 시작됨.
+
+> 설정: `blender.env`에 Blender 경로 지정 (blender.env.example 참고)
+
+### 새 시편 생성 (MCP Interactive)
+```
+1. start_specimen.bat → "New specimen" 선택
+2. Blender + Claude 시작 → MCP 연결 확인
+3. 자연어로 시편 생성 ("10mm 체커보드 만들어줘")
+4. 만족 → "저장해줘" 요청
+5. Claude가:
    a. 생성에 사용한 bpy 코드를 recipe .py로 정리
    b. save_specimen.py 호출하여 .blend + manifest 생성
-5. 결과: assets/specimens/<name>/
+6. 결과: assets/specimens/<name>/
      ├── <name>.recipe.py          ← 재현용 (source of truth)
      ├── <name>.blend              ← Blender 파일
      └── <name>.manifest.yaml      ← 메타데이터
+```
+
+### 기존 시편 수정
+```
+1. start_specimen.bat → "Open existing .blend" 선택 → 경로 입력
+2. Blender + Claude 시작 → MCP 연결 확인
+3. get_scene_info로 현재 scene 파악
+4. 자연어로 수정 ("roughness를 0.5로 바꿔줘")
+5. 저장 시 recipe 업데이트 + .blend + manifest 재생성
 ```
 
 ### 재현 (headless)
@@ -86,10 +108,11 @@ manifest_path = import_specimen(file_path, material_config)
 - `materials.py`: PBR material 헬퍼 (diffuse, specular, emissive)
 - `__init__.py`: 공용 API
 
-## Scripts (packages/blender_authoring/scripts/)
-- `launch_blender.bat`: Blender 실행 (빈 scene, mm 단위)
-- `save_specimen.py`: 현재 scene → .blend + manifest 저장
-- `recipe_template.py`: recipe 표준 템플릿
+## Scripts
+- `scripts/start_specimen.bat`: Blender + Claude 런처 (repo root)
+- `scripts/specimen_context.md`: Claude 시편 전용 프롬프트 (repo root)
+- `packages/blender_authoring/scripts/save_specimen.py`: scene → .blend + manifest 저장
+- `packages/blender_authoring/scripts/recipe_template.py`: recipe 표준 템플릿
 
 ## Output
 - `assets/specimens/<name>/<name>.recipe.py` (재현용 source of truth)

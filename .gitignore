@@ -6,3 +6,6 @@ dist/
 build/
 *.blend1
 .history/
+# Specimen .blend files are reproducible via recipe scripts
+assets/specimens/**/*.blend
+assets/machines/**/*.blend

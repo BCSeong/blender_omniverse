@@ -1,0 +1,10 @@
+format_version: "1.0"
+asset_type: "specimen"
+name: "checkerboard_10mm"
+blend_file: "checkerboard_10mm.blend"
+object_name: "Specimen"
+bounding_box_mm: [10.0, 10.0, 0.51]
+origin: "center"
+material_description: "5x5 checkerboard, white (0.9) + black (0.05), PBR diffuse, roughness 0.8"
+created_by: "blender_authoring.specimen"
+created_at: "2026-03-30 15:52"

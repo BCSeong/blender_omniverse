@@ -26,3 +26,12 @@ Blender MCP 및 bpy 스크립트를 활용한 scene authoring 패키지.
 - cam_sim 패키지를 import하지 않는다
 - bpy 의존 코드는 import guard 적용: `try: import bpy`
 - 외부 asset 경로는 절대경로 금지, 프로젝트 root 상대경로 사용
+
+## Launcher / bat 등록 규칙
+bat 파일을 새로 만들거나 수정할 때 반드시:
+1. `docs/requirements.md`에 해당 launcher의 requirements 추가/업데이트
+   - System Python 패키지 (e.g. `cadquery-ocp`)
+   - Blender addon (e.g. MCP)
+   - 기타 도구 (e.g. `claude` CLI)
+2. bat 파일 내에서 critical requirements 체크 + 에러 메시지 출력
+3. Blender addon 설정은 context.md 초기 단계에서 MCP로 자동 확인/안내

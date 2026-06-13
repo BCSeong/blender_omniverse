@@ -1,7 +1,7 @@
 # 설치 가이드
 
 **환경:** Windows 10 / NVIDIA RTX 4060 / 무료 라이선스
-**작성일:** 2026-03-26
+**작성일:** 2026-06-05
 
 ---
 
@@ -155,14 +155,14 @@ print(rep.__version__)
 
 ## 3. Python 환경 설정
 
-### 가상환경 활성화 (.venv 이미 존재)
+### 가상환경 활성화
 
 ```powershell
 cd "D:\OneDrive - KohYoung\mygit\blender_omniverse"
-.\.venv\Scripts\Activate.ps1
+.\.venv_py312\Scripts\Activate.ps1
 
 # 확인
-python --version  # Python 3.11.x 이어야 함
+python --version  # Python 3.12.x 이어야 함
 ```
 
 ### cam_sim 패키지 설치
@@ -184,7 +184,7 @@ python -c "from cam_sim.lens import load_lens; print('ok')"
 ```python
 # Blender Script Editor에서 외부 패키지 경로 추가:
 import sys
-sys.path.insert(0, r"D:\OneDrive - KohYoung\mygit\blender_omniverse\.venv\Lib\site-packages")
+sys.path.insert(0, r"D:\OneDrive - KohYoung\mygit\blender_omniverse\.venv_py312\Lib\site-packages")
 import cam_sim  # 외부 패키지 사용 가능
 ```
 

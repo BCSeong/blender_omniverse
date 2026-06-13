@@ -51,7 +51,18 @@ docs/
 - `exports/` 내 파일은 `.gitignore`에 추가 가능 (CI에서 생성하는 경우)
 - 변환 시 목차, 스타일은 `templates/reference.docx`를 따름
 
+## Manifest 스키마 조율 (Cross-Package)
+
+`docs/manifest_schema.md` 변경은 `blender_authoring`(생산)과 `cam_sim`(소비) 양쪽에 영향을 준다.
+Docs agent가 이 조율을 담당한다:
+
+1. **스키마 변경 시**:
+   - `docs/manifest_schema.md` 수정
+   - 영향받는 패키지 CLAUDE.md의 contract 섹션 동기화 확인
+   - `packages/blender_authoring/CLAUDE.md` → Output Contract
+   - `packages/cam_sim/CLAUDE.md` → Input Contract, Module Contracts
+2. **검증**: 양쪽 contract이 스키마와 일치하는지 확인 후 완료
+
 ## Constraints
 - 코드 파일 수정 금지 (문서만 담당)
 - 다른 모듈 CLAUDE.md의 API 설명과 일관성 유지
-- manifest_schema.md 변경 시 root orchestrator에 알릴 것 (양쪽 패키지 영향)

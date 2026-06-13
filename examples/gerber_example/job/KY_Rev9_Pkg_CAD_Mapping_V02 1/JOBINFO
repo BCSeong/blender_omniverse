@@ -1,0 +1,38 @@
+{
+  "IsSelected": false,
+  "JobInfo": {
+    "JobVersion": 4,
+    "ContextId": 2895019171854024705,
+    "Revision": 11,
+    "JobName": "KY_Rev9_Pkg_CAD_Mapping_V02 1",
+    "CreatedAt": "2026-01-14T21:19:18.3947951+09:00",
+    "CreatedBy": "kyadmin",
+    "ModifiedAt": "2026-03-07T13:16:24.3463844+09:00",
+    "ModifiedBy": "kyadmin",
+    "CreatedByMachine": 0,
+    "CreatedByMachineName": null,
+    "CreatedByMachineType": "None",
+    "CreatedByLine": 0,
+    "CreatedByLineName": null,
+    "Width": 210.529,
+    "Height": 210.531,
+    "StencilHeight": 120.0,
+    "ArrayCount": 1,
+    "PadCount": 4681,
+    "SmtMaterialCount": 0,
+    "PartCount": 82,
+    "ComponentCount": 1364,
+    "MachineTypes": [
+      "SA"
+    ],
+    "LibraryContextId": 2741782004870676480,
+    "JobConfigurationObjectEntityId": 0,
+    "JobConfigurationObjectEntityRevision": 0
+  },
+  "ParentFolder": null,
+  "Path": "C:/KohYoung/NIS/Job/KY_Rev9_Pkg_CAD_Mapping_V02 1",
+  "PcbInfo": null,
+  "MachineName": "KR-L2509C0007",
+  "BoardImage": null,
+  "ArrayImage": null
+}

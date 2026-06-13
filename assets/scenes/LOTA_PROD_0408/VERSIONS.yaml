@@ -1,0 +1,71 @@
+scene: LOTA_PROD_0408
+description: "Surface property experiment for realistic rendering comparison"
+
+versions:
+  - version: v001
+    date: "2026-06-05"
+    blend: v001/LOTA_PROD_0408_v001.blend
+    usd: v001/LOTA_PROD_0408_v001.usdc
+    purpose: "Initial scene: 9 individual metallic surfaces, diffusers disabled, step1 lighting"
+    materials:
+      Q1_Al_Heavy_Scratch: { roughness: 0.65, metallic: 1.0 }
+      Q1_Al_Medium_Scratch: { roughness: 0.55, metallic: 1.0 }
+      Q1_Al_Light_Scratch: { roughness: 0.45, metallic: 1.0 }
+      Q1_Al_Brushed_Coarse: { roughness: 0.38, metallic: 1.0 }
+      Q1_Al_Brushed_Fine: { roughness: 0.30, metallic: 1.0 }
+      Q1_Al_Satin: { roughness: 0.22, metallic: 1.0 }
+      Q1_Al_Semi_Polished: { roughness: 0.15, metallic: 1.0 }
+      Q1_Al_Polished: { roughness: 0.08, metallic: 1.0 }
+      Q1_Al_Mirror_Polished: { roughness: 0.03, metallic: 1.0 }
+      Q2_PCB_Green: { roughness: 0.70, metallic: 0.0 }
+      Q3_Black_Glossy: { roughness: 0.05, metallic: 0.0 }
+      Q4_Mirror: { roughness: 0.00, metallic: 1.0 }
+    takeaway: |
+      Omniverse Path Tracing 렌더로 9종 알루미늄 비교:
+      - Polished (R=0.08) 이 Q3 Black_Glossy와 유사한 외관
+      - Semi-Polished (R=0.15) 이 Q2 PCB_Green과 유사한 외관
+      - 9개 개별 표면은 비교가 복잡하여 통합 필요
+
+  - version: v002
+    date: "2026-06-05"
+    blend: v002/LOTA_PROD_0408_v002.blend
+    usd: v002/LOTA_PROD_0408_v002.usdc
+    purpose: "Q1 통합, Q3→Gray Scattering Target, PCB roughness 튜닝, camera fStop=8"
+    camera:
+      fStop: 8.0
+    materials:
+      Q1_Aluminum:
+        roughness: 0.115
+        metallic: 1.0
+        note: "9개 표면 → 1개 통합, midpoint of semi-polished and polished"
+      Q2_PCB_Green:
+        roughness: 0.25
+        metallic: 0.0
+        note: "0.70→0.15→0.2→0.25 순차 튜닝"
+      Q3_Gray_Scattering_Target:
+        roughness: 0.8
+        metallic: 0.0
+        color: [0.18, 0.18, 0.18]
+        note: "Black_Glossy에서 변경. 회색 종이(gray paper) 특성 모사"
+      Q4_Mirror:
+        roughness: 0.0
+        metallic: 1.0
+        note: "unchanged"
+    takeaway: |
+      - Q3를 Gray Scattering Target(R=0.8, 18% gray)으로 변경하여 종이 산란 특성 모사
+      - PCB_Green roughness를 0.25로 확정 (0.15~0.35 범위에서 실험)
+      - Camera fStop 2.8→8.0 변경
+
+  - version: v003
+    date: "2026-06-05"
+    blend: v003/LOTA_PROD_0408_v003.blend
+    usd: v003/LOTA_PROD_0408_v003.usdc
+    purpose: "v002 확정 후 다음 실험 시작점"
+    camera:
+      fStop: 8.0
+    materials:
+      Q1_Aluminum: { roughness: 0.115, metallic: 1.0 }
+      Q2_PCB_Green: { roughness: 0.25, metallic: 0.0 }
+      Q3_Gray_Scattering_Target: { roughness: 0.8, metallic: 0.0, color: [0.18, 0.18, 0.18] }
+      Q4_Mirror: { roughness: 0.0, metallic: 1.0 }
+    takeaway: ""

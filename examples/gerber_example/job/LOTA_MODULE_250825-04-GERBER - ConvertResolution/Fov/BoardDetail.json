@@ -1,0 +1,3139 @@
+{
+  "BoardInfo": {
+    "PcbId": -2944525857712766976,
+    "BoardId": -2944525857712766976,
+    "Barcode": "",
+    "BarcodeResultId": 0,
+    "JobContextId": 2944162449392795648,
+    "JobRevision": -1,
+    "JobName": "ScanJob from LOTA_MODULE_250825-04-GERBER - ConvertResolution-Clone#9223372036850068772",
+    "LibraryContextId": 2741782004870676480,
+    "LibraryRevision": -1,
+    "BoardLoadingStartedAt": "0001-01-01T00:00:00",
+    "BoardLoadingFinishedAt": "0001-01-01T00:00:00",
+    "InspectionStartedAt": "0001-01-01T00:00:00",
+    "VisionInspectionStartedAt": "0001-01-01T00:00:00",
+    "VisionInspectionFinishedAt": "0001-01-01T00:00:00",
+    "PersistFinishedAt": "0001-01-01T00:00:00",
+    "InspectionFinishedAt": "0001-01-01T00:00:00",
+    "BoardUnloadingFinishedAt": "0001-01-01T00:00:00",
+    "InspectionTime": "00:00:00",
+    "VisionInspectionTime": "00:00:00",
+    "CycleTime": "00:00:00",
+    "JudgementFinishedAt": "0001-01-01T00:00:00",
+    "BoardEjectedFromRackAt": "0001-01-01T00:00:00",
+    "LaneId": "Front",
+    "View": "Top",
+    "ObjectDirection": "All",
+    "InspectionType": "Scanning",
+    "TuningMode": false,
+    "TuningModeInspectionStartedAt": "0001-01-01T00:00:00",
+    "VisionResult": "eNG",
+    "VisionBoardJudgement": "None",
+    "BoardJudgement": "None",
+    "JudgementState": "None",
+    "BoardDefectCode": "None",
+    "InspectionResultId": 0,
+    "JudgementRevision": 1,
+    "MachineName": "AOI_NOVA_RTX4060",
+    "MachineUuid": "CED03504-F146-4502-BC31-BF1E314994D9",
+    "MachineType": "SA",
+    "SubMachineType": "AOI_LOTA",
+    "LotInfo": null,
+    "DryRun": false,
+    "SqueegeeDirection": "None",
+    "JudgementChanged": false,
+    "BasePcbId": 0,
+    "BaseBoardId": 0,
+    "IsReviewed": false,
+    "IsInstant": true,
+    "IsTeaching": true,
+    "IsBBTTeaching": false,
+    "SelectedFovInspectionRequestId": 0,
+    "JobCacheDir": null,
+    "ResultCacheDir": null,
+    "ResultSaveDir": "F:\\Kohyoung\\NIS\\DCS\\ResultData",
+    "BoardInspectionEnv": null,
+    "UserNo": 0,
+    "CameraBarcode": null,
+    "InlineBarcode": null,
+    "MesBarcode": null
+  },
+  "BoardResultCounts": null,
+  "FiducialInspectionResults": {},
+  "BoardEdgeInspectionResults": null,
+  "BarcodeObjectInspectionResults": null,
+  "BadmarkObjectInspectionResults": null,
+  "ObjectInspectionResults": null,
+  "FovInspectionResults": {
+    "0": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "0",
+        "Position": {
+          "X": 18.427273,
+          "Y": 19.20068,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:18.427273,19.20068,0]",
+        "ShortName": "[Fov:  0]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "1": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "1",
+        "Position": {
+          "X": 55.28182,
+          "Y": 19.20068,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:55.28182,19.20068,0]",
+        "ShortName": "[Fov:  1]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "2": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "2",
+        "Position": {
+          "X": 83.47273,
+          "Y": 19.20068,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:83.47273,19.20068,0]",
+        "ShortName": "[Fov:  2]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "3": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "3",
+        "Position": {
+          "X": 83.47273,
+          "Y": 57.60204,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:83.47273,57.60204,0]",
+        "ShortName": "[Fov:  3]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "4": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "4",
+        "Position": {
+          "X": 46.618183,
+          "Y": 57.60204,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:46.618183,57.60204,0]",
+        "ShortName": "[Fov:  4]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "5": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "5",
+        "Position": {
+          "X": 18.427273,
+          "Y": 57.60204,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:18.427273,57.60204,0]",
+        "ShortName": "[Fov:  5]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "6": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "6",
+        "Position": {
+          "X": 18.427273,
+          "Y": 96.0034,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:18.427273,96.0034,0]",
+        "ShortName": "[Fov:  6]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "7": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "7",
+        "Position": {
+          "X": 55.28182,
+          "Y": 96.0034,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:55.28182,96.0034,0]",
+        "ShortName": "[Fov:  7]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "8": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "8",
+        "Position": {
+          "X": 83.47273,
+          "Y": 96.0034,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:83.47273,96.0034,0]",
+        "ShortName": "[Fov:  8]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "9": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "9",
+        "Position": {
+          "X": 83.47273,
+          "Y": 134.40475,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:83.47273,134.40475,0]",
+        "ShortName": "[Fov:  9]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "10": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "10",
+        "Position": {
+          "X": 46.618183,
+          "Y": 134.40475,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:46.618183,134.40475,0]",
+        "ShortName": "[Fov: 10]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    },
+    "11": {
+      "ComponentResultSets": {},
+      "WireResultSets": {},
+      "SMTMaterialResultSets": {},
+      "ObjectResultSets": {},
+      "GrabInfo": {
+        "FovId": "11",
+        "Position": {
+          "X": 18.427273,
+          "Y": 134.40475,
+          "Z": 0.0
+        },
+        "Plan": {
+          "PlanName": "Fov_RGB_L1L2L3_",
+          "Sequences": [
+            {
+              "Type": "ThreeDPZT",
+              "PlanName": "Fov_RGB_L1L2L3_",
+              "SequenceName": "NIS_2D_L1L2L3_RGB",
+              "Frames": [
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 1,
+                  "IndexInPlan": 1,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 2,
+                  "IndexInPlan": 2,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L1",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 3,
+                  "IndexInPlan": 3,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 4,
+                  "IndexInPlan": 4,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 5,
+                  "IndexInPlan": 5,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L2",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 6,
+                  "IndexInPlan": 6,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Red",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 1,
+                  "IndexInSequence": 7,
+                  "IndexInPlan": 7,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Green",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 2,
+                  "IndexInSequence": 8,
+                  "IndexInPlan": 8,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                },
+                {
+                  "Type": "Blue",
+                  "LayerOrChannel": "L3",
+                  "SequenceType": "TwoD",
+                  "PlanName": "Fov_RGB_L1L2L3_",
+                  "SequenceName": "NIS_2D_L1L2L3_RGB",
+                  "IndexInLayerOrChannel": 3,
+                  "IndexInSequence": 9,
+                  "IndexInPlan": 9,
+                  "ImageWidth": 4096,
+                  "ImageHeight": 4096,
+                  "CameraScale": {
+                    "X": 9.911666,
+                    "Y": 9.911666
+                  },
+                  "ProjectionId": 0,
+                  "LightBrightRatio": "NaN",
+                  "IsEmpty": true,
+                  "Size": {
+                    "Width": 4096,
+                    "Height": 4096
+                  }
+                }
+              ],
+              "IndexInPlan": 1
+            }
+          ],
+          "FrameImageSize": 16777216
+        },
+        "Type": "Fov",
+        "sent": false,
+        "ProcessingTimeTracer": {},
+        "GrabKey": "Fov_RGB_L1L2L3_@[NVector3:18.427273,134.40475,0]",
+        "ShortName": "[Fov: 11]"
+      },
+      "FovResultCounts": null,
+      "VisionFovResult": "eInit",
+      "VisionFovJudgement": "None",
+      "FovJudgement": "None",
+      "ThumbnailImages": {}
+    }
+  },
+  "ArrayInspectionResults": null,
+  "ComponentInspectionResults": null,
+  "SMTMaterialInspectionResults": null,
+  "WireInspectionResults": null,
+  "FiducialOffset": null,
+  "MultiParameterFiducialResults": {},
+  "CompensationInfo": {},
+  "FiducialMSFID2": {},
+  "FiducialMSFID4": {},
+  "OffsetCompensationResults": null,
+  "ConvertCoordinateResults": null,
+  "FiducialMatrixResults": null,
+  "StrainResults": null,
+  "ArrayInfos": null,
+  "ArrayInfoDictionary": null,
+  "ArrayInfosIncludeUnused": null,
+  "ArrayInspectionResultsId": null,
+  "HasImageToArrayIds": null,
+  "DefectObjectsBySeverity": null,
+  "FovWaitingInfo": {},
+  "ArrayWaitingInfo": {},
+  "pendingFovInfo": {},
+  "BadmarkInfo": {
+    "BadmarkObjectIdSet": [],
+    "BadmarkResult": {}
+  },
+  "MesValidationInfo": {
+    "IsSendtoMESBarcodeDone": false,
+    "IsBarcodeValidationDone": false,
+    "IsBadmarkValidationDone": false,
+    "IsInspectionResultValidationDone": false
+  },
+  "InspectionEnv": {
+    "CalibrationEnv": {
+      "LotaReconImageSize": {
+        "Width": 6295,
+        "Height": 3694
+      },
+      "LotaTopCameraScale": {
+        "X": 9.911666,
+        "Y": 9.911666
+      }
+    },
+    "EmitToEndUser": "Fov",
+    "EmitToLineStation": "Single",
+    "KyiSwPlatform": "LOTA",
+    "Fov2dFrameTypes": [],
+    "Fov2dLayers": [],
+    "Fov3dChannels": [],
+    "LessLogsByManyObjects": false,
+    "LessLogsByManyArrays": false,
+    "ArrayIsBiggerThanFov": false,
+    "NeedCudaRecon": null,
+    "FoundCudaReconItem": false,
+    "FovReconNames": null,
+    "SavePreprocessedCalibrationImagesToAtlas": false,
+    "SavePreprocessedObjectImagesToAtlas": false,
+    "BackgroundCoarseImageResizeRatio": 0.1,
+    "BackgroundFineImageResizeRatio": 0.0,
+    "ProductionQuantityCurrent": 0,
+    "SpiEnv": {
+      "BareBoardTeachingItem": null,
+      "IsBareBoardTeaching": false,
+      "InspectionMode": "NORMAL_INSPECTION_MODE",
+      "VolatileDimensionItems": {},
+      "VolatileAoiDimensionItems": {},
+      "VolatileAoiPadOverhangItems": {},
+      "LayerForRGB": "L1",
+      "TargetMaterialTypes": [],
+      "InspectUserDefinedBase": false,
+      "InspectLocalFiducialBase": false,
+      "UsePanelRoiOffset": false,
+      "PanelRoiOffsetResults": null,
+      "PadSurfaceBasePhaseFeature": null,
+      "PadSizeFromRepresentativeArray": null
+    },
+    "AoiEnv": {
+      "CudaReconInputDir": null,
+      "ComponentMatrixResults": null,
+      "NeedIterativePlaneFit": false
+    },
+    "IniFiles": {
+      "AOICUDAEngineIni": null,
+      "VisionConfigIni": null,
+      "SpiKy3030Ini": null,
+      "SpiVision52Ini": null,
+      "SpiPcbInfoIni": null,
+      "RGBUtilParam": null
+    },
+    "AOICUDAEngineIni": null,
+    "VisionConfigIni": null,
+    "SpiKy3030Ini": null,
+    "SpiVision52Ini": null,
+    "SpiPcbInfoIni": null,
+    "RGBUtilParam": null,
+    "GrabFolderPath": "C:/KohYoung/NIS/Job/LOTA_MODULE_250825-04-GERBER - ConvertResolution",
+    "UseFovCache": false,
+    "UseObjectCache": false
+  },
+  "InspectionResultEnv": {
+    "InspectionResultIdRange": {
+      "InspectionObjectId": {
+        "Start": 1,
+        "End": 9223372036854775807
+      },
+      "InspectionItemId": {
+        "Start": 1,
+        "End": 9223372036854775807
+      }
+    },
+    "LastUsedInspectionObjectId": 0,
+    "LastUsedInspectionItemId": 0,
+    "InspectionObjectIdRangeSize": 9223372036854775806,
+    "InspectionItemIdRangeSize": 9223372036854775806
+  },
+  "ItemResultsForAbotedReason": [],
+  "solderPasteBareBoardTeachingData": null,
+  "JobQuery": {
+    "ObjectDirection": "All",
+    "Id": {
+      "ContextId": 2944162449392795648,
+      "Revision": 9223372036850068772
+    },
+    "FovOptimizeItemId": {
+      "ContextId": 2944162449392795648,
+      "EntityId": 2944162449594122240,
+      "Revision": 9223372036854775791
+    }
+  }
+}

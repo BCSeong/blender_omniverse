@@ -1,0 +1,62 @@
+{
+  "Camera": {
+    "PixelW": 4096,
+    "PixelH": 4096,
+    "ScaleW": 9.911666,
+    "ScaleH": 9.911666
+  },
+  "Components": [],
+  "FOV": [
+    {
+      "Num": 1,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 2,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 3,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 4,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 5,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 6,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 7,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 8,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 9,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 10,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 11,
+      "RadianAngle": 0.0
+    },
+    {
+      "Num": 12,
+      "RadianAngle": 0.0
+    }
+  ],
+  "ImageFilePaths": {},
+  "InfoPath": null,
+  "FileExtension": null
+}

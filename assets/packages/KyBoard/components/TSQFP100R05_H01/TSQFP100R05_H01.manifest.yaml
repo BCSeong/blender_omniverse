@@ -1,0 +1,69 @@
+# TSQFP100R05_H01 Package Manifest
+# Altera MAX V 5M80ZT100C5N — TQFP-100
+
+component_name: TSQFP100R05_H01
+part_number: 5M80ZT100C5N
+manufacturer: Intel (Altera)
+package_family: TQFP
+jedec_standard: MS-026 variant AED
+
+pin_count: 100
+pins_per_side: 25
+
+dimensions:
+  body_l_mm: 14.0
+  body_w_mm: 14.0
+  body_h_mm: 1.0
+  tip_to_tip_mm: 16.0
+  lead_pitch_mm: 0.50
+  lead_width_mm: 0.27  # MAX
+  lead_thickness_mm: 0.20  # MAX
+  lead_foot_length_mm: 0.60  # NOM
+  standoff_mm: 0.05
+  exposed_pad: false
+
+materials:
+  body:
+    type: epoxy
+    color: [0.025, 0.025, 0.03]
+    roughness: 0.92
+    mold_texture: dual_noise_bump
+  leads:
+    type: tin_plated
+    color: [0.75, 0.72, 0.68]
+    metallic: 0.95
+    roughness: 0.25
+  marking:
+    type: laser_engraved
+    color: [0.12, 0.12, 0.13]
+    lines:
+      - "ALTERA"
+      - "MAX V"
+      - "5M80ZT100C5N"
+      - "N BBDAH1843A"
+      - "S848MJ27"
+      - "3N3NA8X0A"
+
+features:
+  pin1_marker: {type: circular_indent, position: top_left, radius_mm: 0.35}
+  ejector_pin: {type: circular_indent, position: bottom_right, radius_mm: 0.95}
+  body_bevel: {type: top_edge, width_mm: 0.15, segments: 2}
+  lead_bevel: {type: all_edges, width_mm: 0.03, segments: 2}
+
+objects:
+  - Body
+  - Leads
+  - Marking_0
+  - Marking_1
+  - Marking_2
+  - Marking_3
+  - Marking_4
+  - Marking_5
+  - Pin1_Small
+  - Ejector_Pin
+
+source:
+  type: parametric
+  reference_photo: ref/photo_top_orthographic.png
+  datasheet: Intel MAX V Device Handbook (JEDEC MS-026 AED)
+  render_preview: ref/render_preview.png

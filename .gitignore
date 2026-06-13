@@ -11,3 +11,24 @@ blender.env
 # Specimen .blend files are reproducible via recipe scripts
 assets/specimens/**/*.blend
 assets/machines/**/*.blend
+
+# Large binary files (managed outside git, synced via OneDrive)
+*.blend
+*.usdc
+*.usda
+*.stp
+*.step
+*.stl
+*.obj
+*.fbx
+
+# Scene snapshots and render outputs
+assets/scenes/**/snapshots/*.png
+assets/scenes/**/snapshots/*.exr
+
+# Temp scripts
+assets/scenes/**/explore_step.py
+assets/scenes/**/extract_parts.py
+
+# Python venv
+.venv_py312/

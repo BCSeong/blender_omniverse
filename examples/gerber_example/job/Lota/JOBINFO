@@ -1,0 +1,38 @@
+{
+  "IsSelected": false,
+  "JobInfo": {
+    "JobVersion": 4,
+    "ContextId": 2974502480313319424,
+    "Revision": 9,
+    "JobName": "LOTA_MODULE_250825-04-GERBER",
+    "CreatedAt": "2026-01-14T21:19:18.3947951+09:00",
+    "CreatedBy": "kyadmin",
+    "ModifiedAt": "2026-03-26T14:12:32.5032772+09:00",
+    "ModifiedBy": "kyadmin",
+    "CreatedByMachine": 0,
+    "CreatedByMachineName": null,
+    "CreatedByMachineType": "None",
+    "CreatedByLine": 0,
+    "CreatedByLineName": null,
+    "Width": 101.9,
+    "Height": 124.9,
+    "StencilHeight": 120.0,
+    "ArrayCount": 4,
+    "PadCount": 3796,
+    "SmtMaterialCount": 0,
+    "PartCount": 21,
+    "ComponentCount": 504,
+    "MachineTypes": [
+      "SA"
+    ],
+    "LibraryContextId": 2741782004870676480,
+    "JobConfigurationObjectEntityId": 0,
+    "JobConfigurationObjectEntityRevision": 0
+  },
+  "ParentFolder": null,
+  "Path": "C:/KohYoung/NIS/Job/Lota",
+  "PcbInfo": null,
+  "MachineName": "KR-L2509C0007",
+  "BoardImage": null,
+  "ArrayImage": null
+}

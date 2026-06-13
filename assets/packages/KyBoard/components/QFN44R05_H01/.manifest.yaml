@@ -1,0 +1,92 @@
+name: QFN44R05_H01
+description: 44-pin WQFN, 7x7x0.75mm body, 0.5mm pitch
+gerber_name: QFN44R05_H01
+reference_part: AT89LP52-20MU
+manufacturer: Microchip (formerly Atmel)
+
+package:
+  type: WQFN-44
+  drawing: Microchip C04-307A
+  body_l_mm: 7.0
+  body_w_mm: 7.0
+  body_h_mm: 0.75
+  pin_count: 44
+  pins_per_side: 11
+  pitch_mm: 0.50
+  pad_width_mm: 0.25
+  pad_length_mm: 0.55
+  pad_thickness_mm: 0.20
+  standoff_mm: 0.02
+  exposed_pad_l_mm: 5.15
+  exposed_pad_w_mm: 5.15
+
+materials:
+  body:
+    type: epoxy
+    color: [0.03, 0.03, 0.04]
+    roughness: 0.85
+    texture: mold_noise
+  terminals:
+    type: tin_plated
+    color: [0.75, 0.72, 0.68]
+    metallic: 0.95
+    roughness: 0.25
+  exposed_pad:
+    type: copper
+    color: [0.72, 0.45, 0.20]
+    metallic: 0.90
+    roughness: 0.30
+  # PCB pads and solder: added during assembly stage
+  marking:
+    type: ink_printed
+    color: [0.85, 0.85, 0.82]
+    lines:
+      - "ATMEL"
+      - "89LP52"
+      - "20MU1740"
+      - "TAIWAN-Z"
+      - "35850C"
+      - "A97NTA"
+  pin1_marker:
+    type: dot
+    position: top-left
+
+objects:
+  - Body
+  - Terminal_01 ~ Terminal_44
+  - Exposed_Pad
+  - Pin1_Dot
+  - Marking_00_ATMEL ~ Marking_05_A97NTA
+  - Sun
+
+reference_images:
+  - ref/photo_top_angled.png
+
+reference_documents:
+  - ref/datasheet_44L_WQFN_7x7_C04-0307A.pdf
+
+edge_treatment:
+  body_top:
+    type: fillet
+    radius_mm: 0.10
+    segments: 4
+    reason: mold ejection characteristic
+  body_bottom:
+    type: fillet
+    radius_mm: 0.03
+    segments: 2
+  terminals_inner:
+    type: fillet
+    radius_mm: 0.03
+    segments: 2
+    reason: inner fold radius; outer saw-cut edges remain sharp
+  exposed_pad:
+    type: chamfer
+    size_mm: 0.02
+    segments: 1
+    reason: etching process characteristic
+
+source:
+  geometry: parametric
+  validation: Microchip Drawing C04-307A (44L WQFN 7x7mm)
+  created: 2026-04-01

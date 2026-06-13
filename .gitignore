@@ -21,6 +21,10 @@ assets/machines/**/*.blend
 *.stl
 *.obj
 *.fbx
+*.tif
+*.tiff
+*.exe
+*.sst
 
 # Scene snapshots and render outputs
 assets/scenes/**/snapshots/*.png

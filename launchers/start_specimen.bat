@@ -4,7 +4,7 @@ setlocal enableextensions
 REM === Specimen Authoring Launcher ===
 REM Launches Blender + Claude Code with specimen context
 
-REM -- Resolve project root (parent of scripts/) --
+REM -- Resolve project root (parent of launchers/) --
 set "PROJECT_ROOT=%~dp0.."
 pushd "%PROJECT_ROOT%" 2>nul
 if errorlevel 1 (
@@ -50,8 +50,8 @@ if errorlevel 1 (
     goto FAIL
 )
 
-if not exist "%PROJECT_ROOT%\scripts\specimen_context.md" (
-    echo [ERROR] scripts\specimen_context.md not found.
+if not exist "%PROJECT_ROOT%\launchers\contexts\specimen.md" (
+    echo [ERROR] launchers\contexts\specimen.md not found.
     goto FAIL
 )
 
@@ -110,7 +110,7 @@ goto START_CLAUDE
 
 :NEW_SCENE
 echo [INFO] Starting Blender (empty scene, mm units)...
-start "Blender" "%BLENDER_PATH%" --python-expr "import bpy; [bpy.data.objects.remove(o) for o in list(bpy.data.objects)]; bpy.context.scene.unit_settings.system='METRIC'; bpy.context.scene.unit_settings.scale_length=0.001"
+start "Blender" "%BLENDER_PATH%" --python-expr "import bpy; [bpy.data.objects.remove(o) for o in list(bpy.data.objects)]; bpy.context.scene.unit_settings.system='METRIC'; bpy.context.scene.unit_settings.scale_length=0.001; [setattr(s.region_3d, 'view_perspective', 'ORTHO') for a in bpy.context.screen.areas if a.type=='VIEW_3D' for s in a.spaces if s.type=='VIEW_3D']"
 goto START_CLAUDE
 
 :START_CLAUDE
@@ -121,7 +121,7 @@ echo [INFO] Starting Claude Code (specimen context)...
 echo   Make sure Blender MCP addon is enabled.
 echo.
 cd /d "%PROJECT_ROOT%"
-cmd /k claude --append-system-prompt-file scripts\specimen_context.md "Print the welcome guide and verify MCP connection."
+cmd /k claude --append-system-prompt-file launchers\contexts\specimen.md "Print the welcome guide and verify MCP connection."
 goto DONE
 
 :FAIL

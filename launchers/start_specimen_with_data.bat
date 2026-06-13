@@ -5,7 +5,7 @@ REM === Specimen From Maps Launcher ===
 REM Converts height map + texture map into Blender 3D model
 REM For clean ground-truth data only
 
-REM -- Resolve project root (parent of scripts/) --
+REM -- Resolve project root (parent of launchers/) --
 set "PROJECT_ROOT=%~dp0.."
 pushd "%PROJECT_ROOT%" 2>nul
 if errorlevel 1 (
@@ -51,8 +51,8 @@ if errorlevel 1 (
     goto FAIL
 )
 
-if not exist "%PROJECT_ROOT%\scripts\specimen_from_maps_context.md" (
-    echo [ERROR] scripts\specimen_from_maps_context.md not found.
+if not exist "%PROJECT_ROOT%\launchers\contexts\specimen-from-maps.md" (
+    echo [ERROR] launchers\contexts\specimen-from-maps.md not found.
     goto FAIL
 )
 
@@ -68,7 +68,7 @@ echo   For noisy experimental data, use start_specimen.bat instead.
 echo.
 
 echo [INFO] Starting Blender (empty scene, mm units)...
-start "Blender" "%BLENDER_PATH%" --python-expr "import bpy; [bpy.data.objects.remove(o) for o in list(bpy.data.objects)]; bpy.context.scene.unit_settings.system='METRIC'; bpy.context.scene.unit_settings.scale_length=0.001"
+start "Blender" "%BLENDER_PATH%" --python-expr "import bpy; [bpy.data.objects.remove(o) for o in list(bpy.data.objects)]; bpy.context.scene.unit_settings.system='METRIC'; bpy.context.scene.unit_settings.scale_length=0.001; [setattr(s.region_3d, 'view_perspective', 'ORTHO') for a in bpy.context.screen.areas if a.type=='VIEW_3D' for s in a.spaces if s.type=='VIEW_3D']"
 
 echo.
 echo [INFO] Waiting for Blender to start...
@@ -77,7 +77,7 @@ echo [INFO] Starting Claude Code (specimen from maps context)...
 echo   Make sure Blender MCP addon is enabled.
 echo.
 cd /d "%PROJECT_ROOT%"
-cmd /k claude --append-system-prompt-file scripts\specimen_from_maps_context.md "Print the welcome guide and verify MCP connection."
+cmd /k claude --append-system-prompt-file launchers\contexts\specimen-from-maps.md "Print the welcome guide and verify MCP connection."
 goto DONE
 
 :FAIL

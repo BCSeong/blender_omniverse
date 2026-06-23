@@ -1,0 +1,52 @@
+{
+  "variants": [
+    {
+      "name": "1_top",
+      "enabled": true,
+      "exposure": 0.0003
+    },
+    {
+      "name": "2_mid",
+      "enabled": true,
+      "exposure": 0.0003
+    },
+    {
+      "name": "3_bot",
+      "enabled": true,
+      "exposure": 0.0012
+    },
+    {
+      "name": "4_mid_N",
+      "enabled": true,
+      "exposure": 0.0012
+    },
+    {
+      "name": "5_mid_S",
+      "enabled": true,
+      "exposure": 0.0012
+    },
+    {
+      "name": "6_mid_W",
+      "enabled": true,
+      "exposure": 0.0012
+    },
+    {
+      "name": "7_mid_E",
+      "enabled": true,
+      "exposure": 0.0012
+    },
+    {
+      "name": "9_all_off",
+      "enabled": true,
+      "exposure": 0.0012
+    }
+  ],
+  "res_width": 2048,
+  "res_height": 2048,
+  "spp": 512,
+  "spi": 1,
+  "max_specular_bounces": 16,
+  "usd_path": "D:/OneDrive - kohyoung/mygit/blender_omniverse/assets/scenes/LOTA_PROD_0408/v004/lota-16m10-v3-rev2_v004_2x.usdc",
+  "output_dir": "D:\\OneDrive - kohyoung\\mygit\\blender_omniverse\\output\\renders\\v0.13\\2x_\\",
+  "kit_dir": "D:\\Tools\\kit-app-template\\_build\\windows-x86_64\\release"
+}

@@ -1,7 +1,31 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "mcp__blender__get_object_info",
+      "Bash(python -c \":*)",
+      "Bash(xxd:*)",
+      "WebFetch(domain:www.microchip.com)",
+      "Bash(mkdir -p \"D:/OneDrive - KohYoung/mygit/blender_omniverse/assets/packages/ATMEL_TQFP44/ref\")",
+      "Bash(cp \"D:/OneDrive - KohYoung/mygit/blender_omniverse/examples/component_example/ATMEL_44pin.png\" \"D:/OneDrive - KohYoung/mygit/blender_omniverse/assets/packages/ATMEL_TQFP44/ref/photo_top_angled.png\")",
+      "WebFetch(domain:ww1.microchip.com)",
+      "WebFetch(domain:www.mouser.com)",
+      "WebFetch(domain:www.digikey.com)",
+      "Bash(python -c ':*)",
+      "Bash(where python3:*)",
+      "Bash(where py:*)",
+      "Read(//c/Users/Z4G5/AppData/Local/Programs/Python/**)",
+      "Bash(ls /c/Python*/python.exe)",
+      "Bash(mkdir -p \"D:/OneDrive - KohYoung/mygit/blender_omniverse/assets/packages/KyBoard/components/TSQFP100R05_H01/ref\")",
+      "Bash(cp \"D:/OneDrive - KohYoung/mygit/blender_omniverse/examples/component_example/TSQFP100R05_H01.png\" \"D:/OneDrive - KohYoung/mygit/blender_omniverse/assets/packages/KyBoard/components/TSQFP100R05_H01/ref/photo_top_orthographic.png\")",
+      "Bash(powershell:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "WebFetch(domain:ams-osram.com)"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "blender"
+  ]
 }

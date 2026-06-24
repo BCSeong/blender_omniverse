@@ -1,0 +1,53 @@
+{
+    "stage": {
+        "metersPerUnit": 0.01,
+        "upAxis": "Z",
+        "rootPrimPath": "/root"
+    },
+    "camera": {
+        "primPath": "/root/_Collection/InspectionCam/InspectionCam",
+        "exposure": { "time": 0.0001 }
+    },
+    "removeEnvLights": ["/Environment/defaultLight", "/root/env_light"],
+    "renderSettings": {
+        "rtx:post:tonemap:op": 1,
+        "rtx:post:tonemap:enableSrgbToGamma": false,
+        "rtx:pathtracing:fireflyFilter:maxPerEmissiveUnexposedIntensity": 25000.0,
+        "rtx:pathtracing:fireflyFilter:maxUnexposedIntensityPerSample": 25000.0,
+        "rtx:pathtracing:fireflyFilter:maxUnexposedIntensityPerSampleDiffuse": 25000.0
+    },
+    "diffuserMaterial": {
+        "libraryPath": "assets/materials/optical_diffuser.usda",
+        "sourcePrim": "/MaterialLibrary/OpticalDiffuser",
+        "targetPath": "/root/_materials/OpticalDiffuser_OmniSurface",
+        "bindToXformPrefixes": ["optical_diffuser"]
+    },
+    "lightingVariants": {
+        "variantSetName": "LightingConfig",
+        "defaultVariant": "6_mid_W",
+        "groups": {
+            "top": "Light_top_",
+            "mid_F01": "Light_mid_F01_",
+            "mid_F02": "Light_mid_F02_",
+            "mid_F03": "Light_mid_F03_",
+            "mid_F04": "Light_mid_F04_",
+            "mid_F05": "Light_mid_F05_",
+            "mid_F06": "Light_mid_F06_",
+            "mid_F07": "Light_mid_F07_",
+            "mid_F08": "Light_mid_F08_",
+            "bot": "Light_bot_",
+            "coax": "Light_coax_"
+        },
+        "variants": {
+            "1_top":     { "lights": ["top"] },
+            "2_mid":     { "lights": ["mid_F01", "mid_F02", "mid_F03", "mid_F04", "mid_F05", "mid_F06", "mid_F07", "mid_F08"] },
+            "3_bot":     { "lights": ["bot"] },
+            "4_mid_N":   { "lights": ["mid_F02", "mid_F03"] },
+            "5_mid_S":   { "lights": ["mid_F06", "mid_F07"] },
+            "6_mid_W":   { "lights": ["mid_F04", "mid_F05"] },
+            "7_mid_E":   { "lights": ["mid_F01", "mid_F08"] },
+            "8_all_on":  { "lights": ["top", "mid_F01", "mid_F02", "mid_F03", "mid_F04", "mid_F05", "mid_F06", "mid_F07", "mid_F08", "bot", "coax"] },
+            "9_all_off": { "lights": [] }
+        }
+    }
+}

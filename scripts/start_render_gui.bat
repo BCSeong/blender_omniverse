@@ -6,6 +6,11 @@ REM Launches PySide6 render configuration and monitoring GUI.
 REM Requires: Python 3.10+, PySide6
 
 set "SCRIPT=%~dp0render_gui.py"
+set "VENV=%~dp0..\.venv_py312\Scripts\activate.bat"
+
+if exist "%VENV%" (
+    call "%VENV%"
+)
 
 if not exist "%SCRIPT%" (
     echo [ERROR] render_gui.py not found: %SCRIPT%

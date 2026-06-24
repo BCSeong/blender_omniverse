@@ -46,7 +46,8 @@
   "spp": 512,
   "spi": 1,
   "max_specular_bounces": 16,
-  "usd_path": "D:/OneDrive - kohyoung/mygit/blender_omniverse/assets/scenes/LOTA_PROD_0408/v004/lota-16m10-v3-rev2_v004_2x.usdc",
-  "output_dir": "D:\\OneDrive - kohyoung\\mygit\\blender_omniverse\\output\\renders\\v0.13\\2x_\\",
-  "kit_dir": "D:\\Tools\\kit-app-template\\_build\\windows-x86_64\\release"
+  "usd_path": "D:/OneDrive - kohyoung/mygit/blender_omniverse/assets/scenes/LOTA_PROD_0408/v005/lota-16m10-v3-rev2_v005.usdc",
+  "output_dir": "D:\\OneDrive - kohyoung\\mygit\\blender_omniverse\\assets\\scenes\\LOTA_PROD_0408\\v005\\test_v5",
+  "kit_dir": "D:\\Tools\\kit-app-template\\_build\\windows-x86_64\\release",
+  "camera_horizontal_aperture": 5.12
 }

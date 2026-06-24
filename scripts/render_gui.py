@@ -32,6 +32,12 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+try:
+    from pxr import Usd, UsdGeom, UsdShade, Sdf
+    HAS_PXR = True
+except ImportError:
+    HAS_PXR = False
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = PROJECT_ROOT / "scripts" / "render_config.json"
 LOG_DIR = PROJECT_ROOT / "output" / "logs"
@@ -122,13 +128,14 @@ class RenderGUI(QMainWindow):
 
     def _build_ui(self):
         self.setWindowTitle("Omniverse Batch Renderer")
-        self.setMinimumSize(720, 860)
+        self.setMinimumSize(720, 920)
 
         central = QWidget()
         self.setCentralWidget(central)
         root = QVBoxLayout(central)
 
         root.addWidget(self._build_paths_group())
+        root.addWidget(self._build_camera_group())
         root.addWidget(self._build_settings_group())
         root.addWidget(self._build_variants_group())
         root.addWidget(self._build_kit_group())
@@ -148,6 +155,10 @@ class RenderGUI(QMainWindow):
         usd_browse = QPushButton("Browse...")
         usd_browse.clicked.connect(self._browse_usd_file)
         row1.addWidget(usd_browse)
+        self.init_usd_btn = QPushButton("Initialize USD")
+        self.init_usd_btn.setToolTip("Read camera and material info from USD")
+        self.init_usd_btn.clicked.connect(self._initialize_usd)
+        row1.addWidget(self.init_usd_btn)
         lay.addLayout(row1)
 
         row2 = QHBoxLayout()
@@ -158,6 +169,38 @@ class RenderGUI(QMainWindow):
         out_browse.clicked.connect(self._browse_output_dir)
         row2.addWidget(out_browse)
         lay.addLayout(row2)
+
+        return grp
+
+    def _build_camera_group(self):
+        grp = QGroupBox("Camera (from USD)")
+        lay = QGridLayout(grp)
+
+        lay.addWidget(QLabel("Camera Prim:"), 0, 0)
+        self.camera_path_label = QLabel("(click Initialize USD)")
+        self.camera_path_label.setStyleSheet("color: #888;")
+        lay.addWidget(self.camera_path_label, 0, 1, 1, 3)
+
+        lay.addWidget(QLabel("Horiz. Aperture (mm):"), 1, 0)
+        self.aperture_spin = QDoubleSpinBox()
+        self.aperture_spin.setDecimals(3)
+        self.aperture_spin.setRange(0.1, 100.0)
+        self.aperture_spin.setValue(0.0)
+        self.aperture_spin.setSingleStep(0.1)
+        self.aperture_spin.setEnabled(False)
+        lay.addWidget(self.aperture_spin, 1, 1)
+
+        lay.addWidget(QLabel("Focal Length (mm):"), 1, 2)
+        self.focal_label = QLabel("—")
+        lay.addWidget(self.focal_label, 1, 3)
+
+        lay.addWidget(QLabel("Material:"), 2, 0)
+        self.material_label = QLabel("—")
+        self.material_label.setWordWrap(True)
+        lay.addWidget(self.material_label, 2, 1, 1, 3)
+
+        self._usd_camera_path = None
+        self._usd_orig_aperture = None
 
         return grp
 
@@ -370,6 +413,91 @@ class RenderGUI(QMainWindow):
                 f.write(self.log_text.toPlainText())
             self.logger.info(f"Log saved: {path}")
 
+    # ---- USD Initialize ----
+
+    def _initialize_usd(self):
+        if not HAS_PXR:
+            self.logger.error("pxr (OpenUSD) not installed — cannot read USD")
+            return
+
+        usd_path = self.usd_path_edit.text()
+        if not os.path.exists(usd_path):
+            self.logger.error(f"USD file not found: {usd_path}")
+            return
+
+        try:
+            stage = Usd.Stage.Open(usd_path)
+        except Exception as e:
+            self.logger.error(f"Failed to open USD: {e}")
+            return
+
+        cam_prim = None
+        for prim in stage.Traverse():
+            if prim.IsA(UsdGeom.Camera):
+                cam_prim = prim
+                break
+
+        if not cam_prim:
+            self.logger.warning("No camera found in USD")
+            self.camera_path_label.setText("(no camera found)")
+            return
+
+        cam = UsdGeom.Camera(cam_prim)
+        h_aperture = cam.GetHorizontalApertureAttr().Get()
+        focal = cam.GetFocalLengthAttr().Get()
+
+        self._usd_camera_path = str(cam_prim.GetPath())
+        self._usd_orig_aperture = h_aperture
+
+        self.camera_path_label.setText(self._usd_camera_path)
+        self.camera_path_label.setStyleSheet("color: #ddd;")
+        self.aperture_spin.setValue(h_aperture)
+        self.aperture_spin.setEnabled(True)
+        self.focal_label.setText(f"{focal:.2f}")
+
+        self.logger.info(f"Camera: {self._usd_camera_path}")
+        self.logger.info(f"  horizontalAperture = {h_aperture:.3f} mm, "
+                         f"focalLength = {focal:.2f} mm")
+
+        mat_info = self._read_material_info(stage)
+        if mat_info:
+            self.material_label.setText(mat_info)
+            self.logger.info(f"Material: {mat_info}")
+
+    def _read_material_info(self, stage):
+        for prim in stage.Traverse():
+            if "ChromeMirrorClean" in prim.GetPath().pathString and prim.IsA(UsdShade.Shader):
+                shader = UsdShade.Shader(prim)
+                if shader.GetShaderId() != "UsdPreviewSurface":
+                    continue
+                parts = []
+                for name in ("diffuseColor", "metallic", "roughness", "specular"):
+                    inp = shader.GetInput(name)
+                    if not inp:
+                        continue
+                    conn = inp.GetConnectedSource()
+                    if conn and conn[0]:
+                        src_shader = UsdShade.Shader(conn[0])
+                        file_inp = src_shader.GetInput("file")
+                        if file_inp:
+                            val = file_inp.Get()
+                            parts.append(f"{name}=tex:{Path(str(val.path)).name}")
+                        else:
+                            parts.append(f"{name}=connected")
+                    else:
+                        val = inp.Get()
+                        parts.append(f"{name}={val}")
+                return "ChromeMirrorClean: " + ", ".join(parts)
+        return None
+
+    def _get_camera_override(self):
+        if not self._usd_camera_path:
+            return None
+        current = self.aperture_spin.value()
+        if abs(current - self._usd_orig_aperture) < 0.001:
+            return None
+        return current
+
     # ---- Config ----
 
     def _build_config(self):
@@ -380,7 +508,7 @@ class RenderGUI(QMainWindow):
                 "enabled": cb.isChecked(),
                 "exposure": exp.value(),
             })
-        return {
+        cfg = {
             "variants": variants,
             "res_width": self.width_spin.value(),
             "res_height": self.height_spin.value(),
@@ -391,6 +519,12 @@ class RenderGUI(QMainWindow):
             "output_dir": self.output_dir_edit.text(),
             "kit_dir": self.kit_dir_edit.text(),
         }
+        aperture = self._get_camera_override()
+        if aperture is not None:
+            cfg["camera_horizontal_aperture"] = aperture
+            self.logger.info(f"Camera override: aperture {aperture:.3f} mm "
+                             f"(original: {self._usd_orig_aperture:.3f})")
+        return cfg
 
     def _save_config(self):
         cfg = self._build_config()
@@ -478,6 +612,8 @@ class RenderGUI(QMainWindow):
             f"--/app/renderer/resolution/width={cfg['res_width']}",
             f"--/app/renderer/resolution/height={cfg['res_height']}",
             "--/persistent/exts/omni.kit.viewport.window"
+            "/Viewport/Viewport0/resolutionScale=1.0",
+            "--/persistent/app/viewport"
             "/Viewport/Viewport0/resolutionScale=1.0",
             "--/app/window/dpiScaleOverride=1.0",
             f"--/app/window/width={cfg['res_width']}",

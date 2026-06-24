@@ -1,0 +1,57 @@
+mdl 1.7;
+
+import ::df::*;
+import ::math::*;
+import ::state::*;
+import ::tex::*;
+import ::anno::*;
+
+// M4: Volume scatter approach for dust on chrome sphere.
+// Surface: mostly mirror with small transmission fraction.
+// Volume: scattering in transmitted light simulates dust haze.
+// Requires /rtx/pathtracing/ptvol/enabled = true in Kit.
+
+export material DustyVolume(
+    color base_color = color(0.8, 0.8, 0.8)
+        [[ anno::display_name("Base Color") ]],
+    float dust_fraction = 0.05
+        [[ anno::display_name("Dust Fraction"),
+           anno::hard_range(0.0, 1.0) ]],
+    float scatter_density = 100.0
+        [[ anno::display_name("Scatter Density") ]],
+    color scatter_color = color(1.0, 1.0, 1.0)
+        [[ anno::display_name("Scatter Color") ]],
+    float scatter_anisotropy = 0.0
+        [[ anno::display_name("Scatter Anisotropy"),
+           anno::hard_range(-1.0, 1.0) ]]
+) = let {
+    bsdf mirror = df::microfacet_ggx_smith_bsdf(
+        roughness_u: 0.001,
+        roughness_v: 0.001,
+        tint: base_color,
+        mode: df::scatter_reflect
+    );
+
+    bsdf transmit = df::specular_bsdf(
+        tint: color(1.0),
+        mode: df::scatter_transmit
+    );
+
+    // Most light reflects (mirror), small fraction transmits into volume
+    bsdf combined = df::weighted_layer(
+        weight: 1.0 - dust_fraction,
+        layer: mirror,
+        base: transmit
+    );
+} in material(
+    thin_walled: false,
+    surface: material_surface(scattering: combined),
+    volume: material_volume(
+        scattering: df::anisotropic_vdf(
+            directional_bias: scatter_anisotropy
+        ),
+        scattering_coefficient: scatter_color * scatter_density,
+        absorption_coefficient: color(0.0)
+    ),
+    ior: color(1.0)
+);

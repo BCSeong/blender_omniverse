@@ -26,6 +26,7 @@ Agent tool 호출 시 해당 leaf CLAUDE.md 경로를 프롬프트에 포함하�
 | Asset 로딩, 조합, swap | `packages/cam_sim/src/cam_sim/assembly/CLAUDE.md` |
 | Omniverse 렌더링, 후처리 | `packages/cam_sim/src/cam_sim/render/CLAUDE.md` |
 | Omniverse 연결, Connector, USD export 설정 | `docs/omniverse_connector/CLAUDE.md` |
+| Chrome sphere dust 모델 (텍스처, material, 실험) | `docs/sphere_dust/CLAUDE.md` |
 | Manifest 스키마 변경 | `docs/CLAUDE.md` (양쪽 패키지 영향 → docs agent가 조율) |
 
 ## Launcher Redirect 규칙

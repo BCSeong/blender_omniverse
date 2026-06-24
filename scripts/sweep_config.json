@@ -1,0 +1,53 @@
+{
+  "sweep_name": "oxide",
+  "texture_input": "oxide_thickness_texture",
+  "dust_roughness": 0.1,
+  "shader_setup": {
+    "dust_weight_texture": "sphere_M1_dust_weight.png",
+    "oxide_thickness_influence": 1.0
+  },
+  "lighting_variants": [
+    "4_mid_N",
+    "2_mid"
+  ],
+  "baseline_images": [
+    {
+      "label": "A2W2 (no oxide)",
+      "path_template": "output/renders/v0.13/2x_/ambient_sweep/A2_{lighting}.png"
+    }
+  ],
+  "variants": [
+    {
+      "name": "O1",
+      "texture": "sphere_M1_oxide.png",
+      "params": {
+        "oxide_strength": 0.003
+      },
+      "label": "O1: str=0.003"
+    },
+    {
+      "name": "O2",
+      "texture": "sphere_M1_oxide.png",
+      "params": {
+        "oxide_strength": 0.006
+      },
+      "label": "O2: str=0.006"
+    },
+    {
+      "name": "O3",
+      "texture": "sphere_M1_oxide.png",
+      "params": {
+        "oxide_strength": 0.01
+      },
+      "label": "O3: str=0.010"
+    },
+    {
+      "name": "O4",
+      "texture": "sphere_M1_oxide.png",
+      "params": {
+        "oxide_strength": 0.02
+      },
+      "label": "O4: str=0.020"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+    "stage": {
+        "metersPerUnit": 0.01,
+        "upAxis": "Z",
+        "rootPrimPath": "/root"
+    },
+    "camera": {
+        "primPath": "/root/InspectionCam/InspectionCam",
+        "exposure": { "time": 0.0002 }
+    },
+    "removeEnvLights": ["/Environment/defaultLight"],
+    "lightingVariants": {
+        "variantSetName": "LightingConfig",
+        "defaultVariant": "all",
+        "groups": {
+            "top": "Light_top_",
+            "mid": "Light_mid_",
+            "bot": "Light_bot_",
+            "coax": "Light_coax_"
+        },
+        "variants": {
+            "all":       { "lights": ["top", "mid", "bot", "coax"] },
+            "top_only":  { "lights": ["top"] },
+            "mid_only":  { "lights": ["mid"] },
+            "bot_only":  { "lights": ["bot"] },
+            "coax_only": { "lights": ["coax"] },
+            "all_off":   { "lights": [] }
+        }
+    }
+}

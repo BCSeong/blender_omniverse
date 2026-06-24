@@ -1,0 +1,96 @@
+mdl 1.7;
+
+import ::df::*;
+import ::math::*;
+import ::state::*;
+import ::tex::*;
+import ::anno::*;
+
+export material DustyMirror(
+    // --- Base mirror ---
+    color base_color = color(0.8, 0.8, 0.8)
+        [[ anno::display_name("Base Color (F0)") ]],
+
+    // --- Dust scatter layer ---
+    float dust_weight_constant = 0.04
+        [[ anno::display_name("Dust Weight Constant"),
+           anno::hard_range(0.0, 1.0) ]],
+
+    uniform texture_2d dust_weight_texture = texture_2d()
+        [[ anno::display_name("Dust Weight Texture") ]],
+
+    float dust_weight_texture_influence = 1.0
+        [[ anno::display_name("Dust Weight Texture Influence"),
+           anno::hard_range(0.0, 1.0) ]],
+
+    float dust_roughness = 0.4
+        [[ anno::display_name("Dust Scatter Roughness"),
+           anno::hard_range(0.0, 1.0) ]],
+
+    color dust_scatter_color = color(1.0, 1.0, 1.0)
+        [[ anno::display_name("Dust Scatter Tint") ]],
+
+    // --- Oxide thin-film absorption (grazing-angle darkening) ---
+    float oxide_strength = 0.0
+        [[ anno::display_name("Oxide Absorption Strength"),
+           anno::hard_range(0.0, 1.0) ]],
+
+    uniform texture_2d oxide_thickness_texture = texture_2d()
+        [[ anno::display_name("Oxide Thickness Texture") ]],
+
+    float oxide_thickness_influence = 1.0
+        [[ anno::display_name("Oxide Thickness Texture Influence"),
+           anno::hard_range(0.0, 1.0) ]]
+
+) = let {
+
+    // Sample dust weight from texture
+    float3 tc = state::texture_coordinate(0);
+    float tex_val = tex::texture_isvalid(dust_weight_texture)
+        ? tex::lookup_float(dust_weight_texture, float2(tc.x, tc.y))
+        : 0.0;
+
+    // Blend constant and texture by influence
+    float dust_w = math::lerp(dust_weight_constant, tex_val, dust_weight_texture_influence);
+    float dust_weight = math::clamp(dust_w, 0.0, 1.0);
+
+    // Base: perfect mirror (GGX with roughness=0)
+    bsdf mirror = df::microfacet_ggx_smith_bsdf(
+        roughness_u: 0.001,
+        roughness_v: 0.001,
+        tint: base_color,
+        mode: df::scatter_reflect
+    );
+
+    // Dust: broad scatter lobe (GGX with configurable roughness)
+    bsdf dust_scatter = df::microfacet_ggx_smith_bsdf(
+        roughness_u: dust_roughness,
+        roughness_v: dust_roughness,
+        tint: dust_scatter_color,
+        mode: df::scatter_reflect
+    );
+
+    bsdf combined = df::weighted_layer(
+        weight: dust_weight,
+        layer: dust_scatter,
+        base: mirror
+    );
+
+    // Oxide thin-film absorption: Beer-Lambert at grazing angle
+    float oxide_tex = tex::texture_isvalid(oxide_thickness_texture)
+        ? tex::lookup_float(oxide_thickness_texture, float2(tc.x, tc.y))
+        : 1.0;
+    float tau_normal = oxide_strength
+        * math::lerp(1.0, oxide_tex, oxide_thickness_influence);
+    float cos_theta = math::max(
+        math::abs(math::dot(state::normal(), state::direction())), 0.01);
+    float transmittance = math::exp(-tau_normal / cos_theta);
+
+    bsdf final_bsdf = df::tint(color(transmittance), combined);
+
+} in material(
+    surface: material_surface(
+        scattering: final_bsdf
+    ),
+    ior: color(1.0)
+);

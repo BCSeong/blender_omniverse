@@ -25,10 +25,22 @@ assets/machines/**/*.blend
 *.tiff
 *.exe
 *.sst
+*.7z
 
-# Scene snapshots and render outputs
-assets/scenes/**/snapshots/*.png
-assets/scenes/**/snapshots/*.exr
+# Image files
+*.png
+*.jpg
+*.jpeg
+*.exr
+*.hdr
+*.bmp
+
+# Log files
+*.log
+render_log.txt
+
+# Render outputs (reproducible)
+output/
 
 # Temp scripts
 assets/scenes/**/explore_step.py

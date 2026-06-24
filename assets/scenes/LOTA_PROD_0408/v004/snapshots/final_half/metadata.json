@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-06-24 15:12:31",
+  "usd_path": "D:/OneDrive - kohyoung/mygit/blender_omniverse/assets/scenes/LOTA_PROD_0408/v004/lota-16m10-v3-rev2_v004_2x.usdc",
+  "resolution": {
+    "width": 2048,
+    "height": 2048,
+    "scale": 1.0
+  },
+  "camera": {
+    "prim_path": "/root/_Collection/InspectionCam/InspectionCam",
+    "attributes": {
+      "clippingPlanes": "[]",
+      "clippingRange": "(0.1, 15)",
+      "exposure": 0.0,
+      "exposure:fStop": 8.0,
+      "exposure:iso": 100.0,
+      "exposure:responsivity": 1.0,
+      "exposure:time": 0.0003000000142492354,
+      "focalLength": 31.25,
+      "focusDistance": 0.0,
+      "fStop": 0.0,
+      "horizontalAperture": 5.119999885559082,
+      "horizontalApertureOffset": 0.0,
+      "omni:rtx:autoExposure:adaptationSpeed": 3.5,
+      "omni:rtx:autoExposure:enabled": false,
+      "omni:rtx:autoExposure:histogramClamping:enabled": true,
+      "omni:rtx:autoExposure:histogramClamping:maxLuminance": 100000.0,
+      "omni:rtx:autoExposure:histogramClamping:minLuminance": 50.0,
+      "omni:rtx:autoExposure:histogramFilter": "median",
+      "omni:rtx:autoExposure:whitePointScale": 10.0,
+      "projection": "perspective",
+      "purpose": "default",
+      "shutter:close": 0.0,
+      "shutter:open": 0.0,
+      "stereoRole": "mono",
+      "userProperties:blender:data_name": "InspectionCam",
+      "verticalAperture": 5.119999885559082,
+      "verticalApertureOffset": 0.0,
+      "visibility": "inherited"
+    }
+  },
+  "render_settings": {
+    "/rtx/pathtracing/totalSpp": 512,
+    "/rtx/pathtracing/spp": 1,
+    "/rtx/pathtracing/maxBounces": 63,
+    "/rtx/pathtracing/maxSpecularAndTransmissionBounces": 16,
+    "/rtx/pathtracing/maxVolumeBounces": 15,
+    "/rtx/pathtracing/adaptiveSampling/enabled": false,
+    "/rtx/pathtracing/maxSamplesPerLaunch": 2073600,
+    "/rtx/rendermode": "PathTracing",
+    "/rtx/pathtracing/fireflyFilter/maxPerEmissiveUnexposedIntensity": 1e+20,
+    "/rtx/pathtracing/fireflyFilter/maxUnexposedIntensityPerSample": 1e+20,
+    "/rtx/pathtracing/fireflyFilter/maxUnexposedIntensityPerSampleDiffuse": 1e+20,
+    "_firefly_filter_enabled": false,
+    "_firefly_before": {
+      "/rtx/pathtracing/fireflyFilter/maxPerEmissiveUnexposedIntensity": 3199.99951171875,
+      "/rtx/pathtracing/fireflyFilter/maxUnexposedIntensityPerSample": 3199.99951171875,
+      "/rtx/pathtracing/fireflyFilter/maxUnexposedIntensityPerSampleDiffuse": 3199.99951171875
+    },
+    "/rtx/pathtracing/ptvol/enabled": false,
+    "_ptvol_before": false
+  },
+  "variants": [
+    {
+      "name": "1_top",
+      "exposure": 0.0003
+    },
+    {
+      "name": "2_mid",
+      "exposure": 0.0003
+    },
+    {
+      "name": "3_bot",
+      "exposure": 0.0012
+    },
+    {
+      "name": "4_mid_N",
+      "exposure": 0.0012
+    },
+    {
+      "name": "5_mid_S",
+      "exposure": 0.0012
+    },
+    {
+      "name": "6_mid_W",
+      "exposure": 0.0012
+    },
+    {
+      "name": "7_mid_E",
+      "exposure": 0.0012
+    },
+    {
+      "name": "9_all_off",
+      "exposure": 0.0012
+    }
+  ],
+  "settle_frames": 562
+}

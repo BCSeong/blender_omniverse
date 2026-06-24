@@ -1,36 +1,50 @@
 # Changelog
 
-## [v004] - 2026-06-18 — Optical Diffuser Material (OmniSurface) — WIP
+## [v004] - 2026-06-18 ~ 2026-06-24 — Material Tuning & DustyMirror.mdl
 
 ### Summary
-Optical diffuser를 물리적으로 그럴듯하게 만들고, chrome sphere 표면에 반사되어 보이도록 한 버전.
-핵심: diffuser는 Blender export(UsdPreviewSurface)로는 불가능 → Omniverse OmniSurface(MDL)로 작성,
-clear glass가 아니라 **white translucent**로 모델링해야 sphere에 보인다. (v005 미진입)
+모든 주요 재질(diffuser, ceramic, chrome sphere)을 실측 이미지와 비교하며 체계적으로 튜닝한 버전.
+Chrome sphere는 custom MDL(DustyMirror.mdl)로 전환하여 dust scatter + oxide rim darkening을 구현.
+Ceramic backplate는 Coat(Fresnel) 모델(C20)로 확정. Diffuser는 transmission OFF로 최종 조정.
 
-### Added
-- `assets/materials/optical_diffuser.usda` — OmniSurface diffuser 재질 라이브러리 (Omniverse 튜닝본 추출, 재사용 가능)
+### Added — Optical Diffuser (OmniSurface)
+- `assets/materials/optical_diffuser.usda` — OmniSurface diffuser 재질 라이브러리
 - `usd_config.json` → `diffuserMaterial` 섹션 (라이브러리 경로, 바인딩 대상 prefix)
-- `add_lighting_variants.py` → `apply_diffuser_material()`: 재질 복사 + 모든 `optical_diffuser*` mesh 바인딩
-- `add_lighting_variants.py` → `apply_render_settings()`: RTX render settings를 root layer `customLayerData`에 기록 (Blender export엔 없는 설정을 재현 가능하게)
-- `usd_config.json` → `renderSettings` 섹션: **firefly Max Ray Intensity = 25000** (×3) — 기본값 3200은 간접광을 과도하게 clamp
-- LED cap에 WhiteEpoxy material, PCB에 CoatedGreenPCB (Coat layer = solder mask 광택)
-- `optical_diffuser_TEST` — sphere 위 임시 검증용 복사본 (aperture 절반 축소)
+- `add_lighting_variants.py` → `apply_diffuser_material()`, `apply_render_settings()`
+- `usd_config.json` → `renderSettings`: firefly Max Ray Intensity = 25000
 
-### Changed (validated lighting recipe)
-- LED energy 배합 (Blender): **top 600M, mid/bot/coax 500k** (top은 diffuser 손실 보상으로 mid 대비 매우 높음)
-- Camera `exposure:time`: 0.0002 → **0.002**
+### Added — Chrome Sphere (DustyMirror.mdl)
+- `DustyMirror.mdl` — custom MDL: `weighted_layer(dust_scatter, mirror)` + oxide absorption
+- `sphere_M1_dust_weight.png` — 먼지 밀도 텍스처 (Fine 150K + W2 weight + A2 ambient)
+- `sphere_M1_oxide.png` — 산화층 두께 분포 (고주파 noise, seed=77)
+- `scripts/set_sphere_material.py` — M1/M2/M3/M4/D31-5B/D32 material switcher
+- `scripts/gen_sweep_*.py` — parameter sweep 텍스처 생성기 (weight, ambient, oxide)
+- `scripts/render_param_sweep.py` — Kit sweep renderer (generic, multi-lighting)
+- `scripts/montage.py` — sweep 결과 몽타주 생성기
+- `scripts/run_sweep_*.bat` — sweep 3-step launchers
+
+### Added — Ceramic Backplate
+- Coat 모델(C20): roughness=1.0, metallic=0.0, coat_weight=1.0, coat_roughness=0.3
+- Phase 1 (C0-C12): roughness+metallic 탐색
+- Phase 2 (C13-C20): Coat(Fresnel) 모델 도입 → C20 채택
+
+### Changed
+- Sphere material: OmniPBR roughness/metallic texture (D26) → **DustyMirror.mdl (M1)**
+- Diffuser transmission: ON → **OFF** (OmniSurface transmission이 빛을 과도 차단)
+- LED energy: top 600M, mid/bot/coax 500k
+- Camera exposure: 0.0001
 
 ### Key Findings
-- UsdPreviewSurface에는 실제 transmission이 없음 (`opacity`만) → 투과성 재질은 OmniSurface 필요
-- Chrome sphere의 diffuser 반사가 안 보인 원인: transmissive 재질은 반사 ray가 통과 → radiance 없음
-- 가시성 메커니즘: white ceramic backplate의 **ambient bounce**가 diffuser를 비춤 →
-  white diffuse/subsurface 성분이 이를 sphere로 되산란 → 보임
-- Diffuser는 내부 산란으로 하얗게 보이는 재질 → clear가 아닌 **white translucent**로 모델링 (물리적으로 정확)
-- 재질을 Omniverse에서 작성 시 Blender 재export로 사라짐 → 라이브러리 + post-process 바인딩으로 재현성 확보
-- **LED light ↔ cap 간섭 방지 (시뮬레이션 팁):** spot light는 물리적 발광 구체 반경(`shadow_soft_size`)을 가짐.
-  구체가 cap에 묻히면 cap이 빛을 흡수 → light를 `cap-tip 거리 + light 반경`만큼 cap 밖으로 offset.
-  (v003의 cap 메쉬 beam 차폐 = collection exclude와는 다른 메커니즘)
-- 상세: `docs/material_study.md` 참조
+- **DustyMirror.mdl**: `weighted_layer`가 roughness texture보다 우수 — scatter 에너지 직접 제어 가능
+- **Oxide thin-film absorption**: Beer-Lambert `exp(-τ/cos θ)` — 정면 투명, rim에서만 dark blob 재현
+  - 물리 근거: chrome 도금의 미세 산화(Cr₂O₃/rust)가 grazing에서만 가시화
+  - oxide_strength 0.003~0.006이 적정 (0.03만 되어도 완전 검정)
+- **Ceramic Coat 모델**: base roughness=1.0(Lambertian) + coat weight=1.0(Fresnel) →
+  정면: 균일 diffuse, 측면: glossy 반사 (real ceramic 유약 구조와 일치)
+- **Diffuser**: UsdPreviewSurface에 진짜 transmission 없음 → OmniSurface 필요
+  하지만 OmniSurface transmission도 과도 차단 → OFF가 현 단계에서 가장 정확
+- **Sweep 방법론**: texture 생성 → Kit 렌더 → montage → 비교 파이프라인 확립
+- 상세: `docs/material_study.md`, `docs/sphere_dust_experiments.md`
 
 ---
 
@@ -74,3 +88,4 @@ Metallic hemisphere(polished ball bearing)를 이용해 LED 방향성과 반사 
 - pyproject.toml 패키지 설정
 - configs/ 템플릿 (lens_pinhole.yaml, sensor_gmax0505.yaml)
 - docs/INSTALL.md 설치 가이드
+2

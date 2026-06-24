@@ -14,7 +14,7 @@ import omni.kit.app
 import omni.kit.renderer_capture
 import omni.usd
 from omni.kit.viewport.utility import get_active_viewport, capture_viewport_to_file
-from pxr import Sdf
+from pxr import Sdf, UsdGeom
 
 
 PROJECT_ROOT = Path(os.environ.get(
@@ -74,6 +74,7 @@ SAMPLES_PER_ITERATION = CFG.get("spi", 3)
 MAX_SPECULAR_BOUNCES = CFG.get("max_specular_bounces", 6)
 USD_PATH = CFG.get("usd_path", DEFAULT_USD_PATH)
 OUTPUT_DIR = CFG["output_dir"]
+CAMERA_APERTURE_OVERRIDE = CFG.get("camera_horizontal_aperture", None)
 
 
 _log_file = None
@@ -133,32 +134,83 @@ async def render_all_variants():
 
         viewport_api.camera_path = Sdf.Path(CAMERA_PATH)
 
+        if CAMERA_APERTURE_OVERRIDE is not None:
+            cam_prim_obj = stage.GetPrimAtPath(CAMERA_PATH)
+            if cam_prim_obj and cam_prim_obj.IsA(UsdGeom.Camera):
+                cam_geom = UsdGeom.Camera(cam_prim_obj)
+                orig = cam_geom.GetHorizontalApertureAttr().Get()
+                cam_geom.GetHorizontalApertureAttr().Set(
+                    float(CAMERA_APERTURE_OVERRIDE))
+                _log(f"Camera aperture override: {orig} -> "
+                     f"{CAMERA_APERTURE_OVERRIDE} mm (in-memory only)")
+
         settings = carb.settings.get_settings()
 
-        # Force render scale to 100% (user config may have 200%)
-        scale_path = ("/persistent/exts/omni.kit.viewport.window"
-                      "/Viewport/Viewport0/resolutionScale")
-        settings.set_float(scale_path, 1.0)
+        # Force render scale to 100% — Kit has two persistent paths
+        scale_paths = [
+            "/persistent/exts/omni.kit.viewport.window"
+            "/Viewport/Viewport0/resolutionScale",
+            "/persistent/app/viewport"
+            "/Viewport/Viewport0/resolutionScale",
+        ]
         viewport_api.fill_frame = False
         await _wait_frames(3)
-        viewport_api.resolution = (RES_WIDTH, RES_HEIGHT)
-        await _wait_frames(5)
 
-        _log(f"Resolution target: {RES_WIDTH}x{RES_HEIGHT}")
-        _log(f"resolutionScale = {settings.get(scale_path)}")
-        _log(f"viewport_api.resolution = {viewport_api.resolution}")
+        for sp in scale_paths:
+            settings.set_float(sp, 1.0)
+        viewport_api.resolution = (RES_WIDTH, RES_HEIGHT)
+        await _wait_frames(10)
+
+        for sp in scale_paths:
+            val = settings.get(sp)
+            _log(f"  {sp} = {val}")
+            if val is not None and abs(val - 1.0) > 0.01:
+                _log(f"ERROR: resolutionScale={val} at {sp}. "
+                     f"Output would be {int(RES_WIDTH * val)}x"
+                     f"{int(RES_HEIGHT * val)}. Aborting.")
+                app.post_quit()
+                return
+
+        effective_res = viewport_api.resolution
+        _log(f"Resolution: {RES_WIDTH}x{RES_HEIGHT}, "
+             f"viewport={effective_res}")
 
         # Apply render quality settings from GUI config
         settings.set_int("/rtx/pathtracing/totalSpp", PATH_TRACE_SPP)
         settings.set_int("/rtx/pathtracing/spp", SAMPLES_PER_ITERATION)
         settings.set_int("/rtx/pathtracing/maxSpecularAndTransmissionBounces",
                          MAX_SPECULAR_BOUNCES)
+
+        # Firefly filter control from config
+        firefly_enabled = CFG.get("firefly_filter_enabled", False)
+        firefly_paths = [
+            "/rtx/pathtracing/fireflyFilter/maxPerEmissiveUnexposedIntensity",
+            "/rtx/pathtracing/fireflyFilter/maxUnexposedIntensityPerSample",
+            "/rtx/pathtracing/fireflyFilter/maxUnexposedIntensityPerSampleDiffuse",
+        ]
+        firefly_before = {}
+        for p in firefly_paths:
+            firefly_before[p] = settings.get(p)
+        if not firefly_enabled:
+            for p in firefly_paths:
+                settings.set_float(p, 1e20)
+            _log("Firefly filter: DISABLED (max intensity set to 1e20)")
+        else:
+            _log(f"Firefly filter: ENABLED (using current values)")
+
+        # Non-uniform volume rendering control
+        ptvol_enabled = CFG.get("ptvol_enabled", False)
+        ptvol_before = settings.get("/rtx/pathtracing/ptvol/enabled")
+        settings.set_bool("/rtx/pathtracing/ptvol/enabled", ptvol_enabled)
+        _log(f"Non-uniform volumes: {'ENABLED' if ptvol_enabled else 'DISABLED'}"
+             f" (was: {ptvol_before})")
+
         await _wait_frames(3)
 
         # Log effective render settings
         _log("--- Render Settings ---")
         _log(f"  Resolution: {RES_WIDTH}x{RES_HEIGHT}")
-        _log(f"  resolutionScale: {settings.get(scale_path)}")
+        _log(f"  resolutionScale: {[settings.get(sp) for sp in scale_paths]}")
         _log(f"  totalSpp (GUI): {PATH_TRACE_SPP}")
         rt_settings = [
             ("/rtx/pathtracing/totalSpp", "Total SPP (applied)"),
@@ -175,6 +227,10 @@ async def render_all_variants():
             val = settings.get(path)
             if val is not None:
                 _log(f"  {label}: {val}")
+        _log("--- Firefly Filter ---")
+        for p in firefly_paths:
+            _log(f"  {p.split('/')[-1]}: before={firefly_before[p]}, "
+                 f"after={settings.get(p)}")
         _log("----------------------")
 
         enabled = [v for v in VARIANTS if v.get("enabled", True)]
@@ -210,12 +266,18 @@ async def render_all_variants():
             "/rtx/pathtracing/adaptiveSampling/enabled",
             "/rtx/pathtracing/maxSamplesPerLaunch",
             "/rtx/rendermode",
-        ]
+        ] + firefly_paths
         render_settings = {}
         for p in rt_paths:
             val = settings.get(p)
             if val is not None:
                 render_settings[p] = val
+        render_settings["_firefly_filter_enabled"] = firefly_enabled
+        render_settings["_firefly_before"] = {
+            k: v for k, v in firefly_before.items() if v is not None
+        }
+        render_settings["/rtx/pathtracing/ptvol/enabled"] = ptvol_enabled
+        render_settings["_ptvol_before"] = ptvol_before
 
         metadata = {
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
@@ -223,7 +285,10 @@ async def render_all_variants():
             "resolution": {
                 "width": RES_WIDTH,
                 "height": RES_HEIGHT,
-                "scale": settings.get(scale_path),
+                "render_scale": {
+                    sp: settings.get(sp) for sp in scale_paths
+                },
+                "viewport_resolution": list(effective_res),
             },
             "camera": {
                 "prim_path": CAMERA_PATH,
